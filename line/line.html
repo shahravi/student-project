@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Shapes with Lines</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <section id="line-area" class="text-center"></section>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="line-helper.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+      var currentLength = 0;
+      var desiredLength = 10;
+      var timer;
+      var wait_timer;
+
+      drawCanvas(500, 500);
+      animatedLine();
+      // animatedLine();
+      // animatedLine();
+      // animatedLine();
+      // turnRight();
+
+      function animatedLine() {
+        while (true) {
+          if (!timer) {
+            window.clearInterval(wait_timer);
+            timer = window.setInterval(draw, 10);
+            break;
+          } else {
+            if (!wait_timer) {
+              wait_timer = window.setInterval(code_wait, 100);
+            }
+          }
+        }
+
+        // while (timer) {
+        //
+        // }
+
+        function draw() {
+          drawLine(1);
+          if (currentLength++ == desiredLength) {
+            window.clearInterval(timer);
+            // window.clearInterval(wait_timer);
+          }
+        }
+      }
+
+      function code_wait() {}
+
+      // assignment19d();
+
+      // var x = 250;
+      // var y = 250;
+      // var a = 0;
+      // var b = 200;
+      //
+      // var counter = 0;
+      //
+      // var timer = window.setInterval(carRace, 100);
+      // function carRace() {
+      //   var lineLength = 0;
+      //   clearCanvas();
+      //   // changeStrokeColor();
+      //   drawCircle(20, x, y);
+      //   moveTo(a, b);
+      //   for (var i = 0; i < 25; i++) {
+      //     if (lineLength < 1000) {
+      //       drawLine(20);
+      //       jumpForward(20);
+      //     }
+      //   }
+      //   moveTo(a, b + 100);
+      //   for (var i = 0; i < 25; i++) {
+      //     drawLine(20);
+      //     jumpForward(20);
+      //   }
+      //   a++;
+      // }
+    </script>
+  </body>
+</html>

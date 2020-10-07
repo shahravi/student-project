@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Test</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+
+    <link href="http://childrenscodingclub.com/css/styles.css" rel="stylesheet" />
+    <style media="screen">
+      .ravi {
+        color: red;
+        text-align: center;
+      }
+
+      .screen {
+        position: relative;
+        max-width: 100%;
+        height: auto;
+        min-height: 1rem;
+        border: 5px solid green;
+        border-radius: 3px;
+        background: url('about.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;
+      }
+
+      .game {
+        position: relative;
+        border: 1px solid red;
+      }
+    </style>
+
+
+  </head>
+  <body>
+    <!-- Navigation-->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Coding Club</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#upcomingclasses">Upcoming Classes</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+    <!-- <h1 class="ravi">Coding Club</h1> -->
+    <!-- <img class="screen" src="about.png" alt=""> -->
+
+    <!-- Masthead-->
+    <header class="screen">
+      <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Code & Build</h1>
+                <h2 class="text-white mx-auto mt-5 mb-5">Learn HTML, Javascript at a young age.<br><br>Build your first website. <br><br>Build your first game. </h2>
+                <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+            </div>
+        </div>
+    </header>
+    <section id="pong" class="text-center">
+      <div class="container">
+        <div class="row" id="pong-area">
+          <!-- <canvas id="canvas" width="600" height="400" class="game"></canvas> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Ravi Shah 2020</div></footer>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- <script src="app.js" charset="utf-8"></script> -->
+    <script src="http://www.childrenscodingclub.com/helpers/pong-helper.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      drawCanvas(400, 300);
+      drawBackground();
+      drawBall();
+      drawLeftPaddle();
+      drawRightPaddle();
+
+      keyUp = moveRightPaddleUp;
+      keyDown = moveRightPaddleDown;
+      keyLeft = moveLeftPaddleUp;
+      keyRight = moveLeftPaddleDown;
+
+      setBallSpeed(25);
+
+      start();
+    </script>
+  </body>
+</html>
