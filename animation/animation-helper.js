@@ -93,11 +93,11 @@ function assignment11() {
   }
 }
 
+// var paddleX = 225;
+// var paddleY = 480;
 function assignment12() {
-  var x = 225;
-  var y = 480;
   var width = 50;
-  var height = 100;
+  var height = 25;
 
   window.setInterval(draw, 1);
 

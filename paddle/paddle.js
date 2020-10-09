@@ -1,7 +1,10 @@
-var x = 225;
-var y = 480;
+var paddleX = 225;
+var paddleY = 480;
 var width = 50;
 var height = 100;
+
+var ballX = 50;
+var ballY = 0;
 drawCanvas(500, 500);
 
 function assignment1() {
@@ -10,7 +13,7 @@ function assignment1() {
   function draw() {
     clearCanvas();
 
-    drawRectangle(x, y, width, height);
+    drawRectangle(paddleX, paddleY, width, height);
     if (isKeyPressed(keyRight)) {
       paddleGoRight();
     }
@@ -20,27 +23,73 @@ function assignment1() {
   }
 }
 
+function assignment2() {
+  window.setInterval(draw, 1);
+  var move = createNewBall;
+
+  function draw() {
+    clearCanvas();
+
+    drawRectangle(paddleX, paddleY, width, height);
+    drawCircle(20, ballX, ballY);
+
+    if (isKeyPressed(keyRight)) {
+      paddleGoRight();
+    }
+    if (isKeyPressed(keyLeft)) {
+      paddleGoLeft();
+    }
+
+    if (ballY == 0) {
+      move = ballGoDown;
+    }
+
+    if (ballY == 500) {
+      if (ballX > paddleX && ballX < paddleX + 50) {
+        move = ballGoUp;
+      } else {
+        createNewBall();
+      }
+    }
+    move();
+  }
+}
+
+function createNewBall() {
+  ballX = Math.random() * 500;
+  ballY = 0;
+}
+
 function paddleGoLeft() {
-  x = x - 1;
+  paddleX = paddleX - 1;
 }
 
 function paddleGoRight() {
-  x = x + 1;
+  paddleX = paddleX + 1;
 }
 
-function stayPut() {
-  x = x;
+function ballStayPut() {
+  ballX = ballX;
+  ballY = ballY;
 }
 
-function goUpwards() {
-  y = y - 1;
+function ballGoLeft() {
+  ballX = ballX - 1;
 }
 
-function goDownwards() {
-  y = y + 1;
+function ballGoRight() {
+  ballX = ballX + 1;
 }
 
-function goDiagonal() {
-  x = x + 1;
-  y = y + 1;
+function ballGoUp() {
+  ballY = ballY - 1;
+}
+
+function ballGoDown() {
+  ballY = ballY + 1;
+}
+
+function ballGoDiagonal() {
+  ballX = ballX + 1;
+  ballY = ballY + 1;
 }
