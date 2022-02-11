@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Code Editor</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/hint/show-hint.css"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/addon/hint/show-hint.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/javascript/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/css/css.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/mode/htmlmixed/htmlmixed.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/theme/base16-dark.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      charset="utf-8"
+    ></script>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="row bg-warning">
+          <h1>Code Editor</h1>
+          <div class="col-lg-8">
+            <textarea
+              name="name"
+              rows="20"
+              cols="1000"
+              id="ccc-code-editor"
+            ></textarea>
+          </div>
+          <div class="col-lg-4 no-border">
+            <iframe id="preview">
+              <!DOCTYPE html>
+              <html lang="en" dir="ltr">
+                <head>
+                  <meta charset="utf-8" />
+                  <title></title>
+                </head>
+                <body>
+                  <h1>Test</h1>
+                </body>
+              </html>
+            </iframe>
+          </div>
+        </div>
+
+        <div class="row bg-light"></div>
+
+        <div class="row bg-info">
+          <div class="col-12">
+            <h2>Instructions</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      const codemirrorEditor = CodeMirror.fromTextArea(
+        document.getElementById("ccc-code-editor"),
+        {
+          lineNumbers: true,
+          mode: "javascript",
+          theme: "base16-dark",
+        }
+      );
+
+      $(document).ready(function () {
+        codemirrorEditor.on("cursorActivity", onCursorActivity);
+      });
+
+      var delay;
+      codemirrorEditor.on("change", function () {
+        clearTimeout(delay);
+
+        delay = setTimeout(updatePreview, 300);
+      });
+
+      function onCursorActivity(codemirrorEditor) {
+        alert("hey");
+      }
+      function updatePreview() {
+        loadCSS();
+      }
+      setTimeout(updatePreview, 300);
+
+      function loadCSS() {
+        var $head = $("#preview").contents().find("body");
+        var code =
+          '<html><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><h1 class="bg-warning">Test</h1></html>';
+        $head.html(codemirrorEditor.getValue());
+        $head.html(code);
+      }
+    </script>
+  </body>
+</html>

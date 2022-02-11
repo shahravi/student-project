@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Pong Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+    <style>
+      .border-5 {
+        border-style: solid;
+        border-width: 5px;
+        border-radius: 10px;
+        border-style: double;
+      }
+      .box-100 {
+        width: 100px;
+      }
+      .box-200 {
+        width: 200px;
+      }
+      .box-300 {
+        width: 300px;
+      }
+      .box-400 {
+        width: 400px;
+      }
+      .box-500 {
+        width: 500px;
+      }
+
+      .all-way {
+        width: 200px;
+        background-color: red;
+        border: white solid;
+        border-radius: 5px;
+        font-size: 30px;
+      }
+
+      .fixed-100 {
+        width: 100px;
+      }
+      .font-sm {
+        font-size: 10px;
+      }
+      .font-md {
+        font-size: 15px;
+      }
+      .font-lg {
+        font-size: 20px;
+      }
+      .font-xl {
+        font-size: 30px;
+      }
+      .font-xxl {
+        font-size: 40px;
+      }
+      .font-xxxl {
+        font-size: 50px;
+      }
+      .exits {
+        /* width: 300px; */
+        border: 5px solid white;
+        border-radius: 5px;
+        background-color: green;
+      }
+      .exits-number {
+        /* width: 300px; */
+        border-top: 5px solid white;
+        border-right: 5px solid white;
+        border-left: 5px solid white;
+        outline: solid 5px green;
+        background-color: green;
+        border-radius: 5px 5px 5px 5px;
+      }
+    </style>
+  </head>
+  <body class="bg-light">
+    <h1 class="text-center">Traffic Signals</h1>
+    <section class="bg-success">
+      <div class="container">
+        <div class="row p-3">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <div class="all-way text-white font-weight-bold text-center p-2">ALL WAY</div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-info">
+      <div class="container">
+        <div class="row p-3">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <div class="all-way text-white font-weight-bold text-center p-2">WRONG WAY</div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-warning">
+      <div class="container">
+        <div class="row text-center border-success pt-2 pb-2">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <div class="fixed-100 bg-white border-dark border-5 text-center">
+              <h4>SPEED</h4>
+              <h4>LIMIT</h4>
+              <h1 class="font-xxl">45</h1>
+            </div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-danger">
+      <div class="container">
+        <div class="row text-center border-success pt-2 pb-2">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <div class="box-100-200 bg-warning border-dark border-5 text-center">
+              <h5 class="bg-dark text-white pb-1">CAUTION</h5>
+
+              <h4 class="font-md">WATCH</h4>
+              <h4 class="font-md">FOR</h4>
+              <h4 class="font-md">VEHICLES</h4>
+            </div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-success p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-9"></div>
+          <div class="col-3 exits-number p-2 border-light text-white text-right font-weight-bold">Exit 59</div>
+        </div>
+        <div class="row exits p-2 border-light text-white font-weight-bold">
+          <div class="col-9">Ray Road</div>
+          <div class="col-3 text-right">3</div>
+          <div class="col-9">Warner Road</div>
+          <div class="col-3 text-right">4</div>
+          <div class="col-9">Eliott Road</div>
+          <div class="col-3 text-right">5</div>
+          <div class="col-9">Guadalupe Road</div>
+          <div class="col-3 text-right">6</div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  </body>
+</html>

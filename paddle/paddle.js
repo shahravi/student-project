@@ -5,6 +5,8 @@ var height = 100;
 
 var ballX = 50;
 var ballY = 0;
+var score = 0;
+
 drawCanvas(500, 500);
 
 function assignment1() {
@@ -29,7 +31,7 @@ function assignment2() {
 
   function draw() {
     clearCanvas();
-
+    printText(score);
     drawRectangle(paddleX, paddleY, width, height);
     drawCircle(20, ballX, ballY);
 
@@ -47,8 +49,10 @@ function assignment2() {
     if (ballY == 500) {
       if (ballX > paddleX && ballX < paddleX + 50) {
         move = ballGoUp;
+        score++;
       } else {
         createNewBall();
+        score = 0;
       }
     }
     move();

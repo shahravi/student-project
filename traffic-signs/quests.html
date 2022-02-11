@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+    <title>Quests</title>
+  </head>
+  <body class="bg-light">
+    <header class="text-center">
+      <h1>Traffic Signals</h1>
+    </header>
+    <section class="bg-success">
+      <div class="container">
+        <div class="row p-3">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <div class="all-way text-white text-center p-2">ALL WAY</div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+      <style>
+        .all-way {
+          width: 200px;
+          background-color: red;
+          border: white solid;
+          border-radius: 5px;
+          font-size: 30px;
+        }
+      </style>
+    </section>
+    <section class="bg-info">
+      <div class="container">
+        <div class="row p-3">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <div class="wrong-way text-white text-center p-2">WRONG WAY</div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+      <style>
+        .wrong-way {
+          width: 200px;
+          background-color: red;
+          border: white solid;
+          border-radius: 5px;
+          font-size: 30px;
+          font-weight: bold;
+        }
+      </style>
+    </section>
+    <section class="bg-warning">
+      <div class="container">
+        <div class="row text-center border-success pt-2 pb-2">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <div class="speed-limit bg-white border-dark border-5 text-center">
+              <div class="font-speed-limit">
+                SPEED <br />
+                LIMIT
+              </div>
+              <div class="font-speed-limit-number">45</div>
+            </div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+      <style>
+        .speed-limit {
+          width: 150px;
+          border-radius: 5px;
+          border: 5px double;
+        }
+        .font-speed-limit {
+          font-size: 35px;
+        }
+        .font-speed-limit-number {
+          font-size: 75px;
+        }
+      </style>
+    </section>
+    <section class="bg-danger">
+      <div class="container">
+        <div class="row text-center border-success pt-2 pb-2">
+          <div class="col-4"></div>
+          <div class="col-4">
+            <div class="caution bg-warning border-dark border-5 text-center">
+              <div class="bg-dark text-white pb-1 font-caution">CAUTION</div>
+              <div class="font-caution">WATCH</div>
+              <div class="font-caution">FOR</div>
+              <div class="font-caution">VEHICLES</div>
+            </div>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+      <style>
+        .caution {
+          width: 150px;
+          border: double black;
+          border-radius: 5px;
+        }
+        .font-caution {
+          font-size: 25px;
+        }
+      </style>
+    </section>
+    <section class="bg-success p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-9"></div>
+          <div class="col-3 exits-number p-2 border-light text-white text-right font-weight-bold">Exit 59</div>
+        </div>
+        <div class="row exits p-2 border-light text-white font-weight-bold">
+          <div class="col-9">Ray Road</div>
+          <div class="col-3 text-right">3</div>
+          <div class="col-9">Warner Road</div>
+          <div class="col-3 text-right">4</div>
+          <div class="col-9">Eliott Road</div>
+          <div class="col-3 text-right">5</div>
+          <div class="col-9">Guadalupe Road</div>
+          <div class="col-3 text-right">6</div>
+        </div>
+      </div>
+      <style>
+        .exits {
+          /* width: 300px; */
+          border: 5px solid white;
+          border-radius: 5px;
+          background-color: green;
+        }
+        .exits-number {
+          /* width: 300px; */
+          border-top: 5px solid white;
+          border-right: 5px solid white;
+          border-left: 5px solid white;
+          /* outline: solid 5px green; */
+          background-color: green;
+          border-radius: 5px 5px 5px 5px;
+        }
+      </style>
+    </section>
+  </body>
+</html>
